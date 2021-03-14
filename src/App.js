@@ -1,10 +1,11 @@
 import React, { Component } from "react";
-import EmployeeCard from "./components/EmployeeCard";
+import "bootstrap/dist/css/bootstrap.css";
+import EmployeeRow from "./components/EmployeeRow";
 import Wrapper from "./components/Wrapper";
 import Container from "./components/Container";
-import Header from "./components/Header";
-import Search from "./components/Search";
 import Title from "./components/Title";
+import HeaderRow from "./components/HeaderRow";
+import Search from "./components/Search";
 import employees from "./employees.json";
 
 class App extends Component {
@@ -38,17 +39,17 @@ class App extends Component {
 
   render() {
     return (
-      <div>
+      
 
       
-      {/* <Wrapper> */}
-        {/* <Title>Employee Directory</Title> */}
-        {/* <Container> */}
+      <Wrapper>
+        <Title>Employee Directory</Title>
+        <Container>
 
           <Search handleChange = {this.handleInputChange} handleSubmit = {this.handleFormSubmit} />
-          {/* <Header></Header> */}
-          {/* {this.state.employees.map(employee => (
-            <EmployeeCard
+          <HeaderRow></HeaderRow>
+          {this.state.employees.map(employee => (
+            <EmployeeRow
               id={employee.id}
               key={employee.id}
               name={employee.name}
@@ -57,11 +58,11 @@ class App extends Component {
               occupation={employee.occupation}
               location={employee.location}
             />
-          ))} */}
-        {/* </Container> */}
+          ))}
+        </Container>
         
-      {/* </Wrapper> */}
-      </div>
+      </Wrapper>
+      
     );
   }
 }
