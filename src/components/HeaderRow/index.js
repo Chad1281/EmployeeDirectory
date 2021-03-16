@@ -2,13 +2,13 @@ import React from "react";
 
 function HeaderRow() {
     return (
-        <div class="row">
-            <div class="col-sm-2">Name</div>
-            <div class="col-sm-2">Phone Number</div>
-            <div class="col-sm-2">Email</div>
-            <div class="col-sm-2">Occupation</div>
-            <div class="col-sm-2">Location</div>
-        </div>
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Phone Number</th>
+            <th scope="col">Email</th>
+            <th scope="col">Occupation</th>
+            <th scope="col">Location</th>
+        </tr>
     )
 }
 
