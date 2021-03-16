@@ -1,11 +1,10 @@
 import React, { Component } from "react";
 import "bootstrap/dist/css/bootstrap.css";
-import EmployeeRow from "./components/EmployeeRow";
+import 'react-bootstrap-table-next/dist/react-bootstrap-table2.min.css';
 import Wrapper from "./components/Wrapper";
 import Container from "./components/Container";
 import Title from "./components/Title";
 import Table from "./components/Table";
-import HeaderRow from "./components/HeaderRow";
 import Search from "./components/Search";
 import employees from "./employees.json";
 
@@ -38,31 +37,21 @@ class App extends Component {
     this.setState({ employees });
   }
 
+  sortTable = event => {
+
+  }
+
   render() {
     return (      
       <Wrapper>
         <Title>Employee Directory</Title>
         <Container>
-
           <Search handleChange = {this.handleInputChange} handleSubmit = {this.handleFormSubmit} />
-          <Table>
-            <HeaderRow></HeaderRow>
-            {this.state.employees.map(employee => (
-              <EmployeeRow
-                id={employee.id}
-                key={employee.id}
-                name={employee.name}
-                phone={employee.phone}
-                email={employee.email}
-                occupation={employee.occupation}
-                location={employee.location}
-              />
-            ))}
-          </Table>
+          <Table employees= {this.state.employees}>
             
+          </Table>            
         </Container>        
-      </Wrapper>
-      
+      </Wrapper>      
     );
   }
 }
