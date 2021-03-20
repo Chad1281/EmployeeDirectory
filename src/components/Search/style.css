@@ -1,0 +1,9 @@
+form {
+    padding: 5px;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+input {
+    margin: 5px;
+}
