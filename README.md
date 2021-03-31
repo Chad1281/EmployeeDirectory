@@ -4,7 +4,7 @@
 
 This employee directory shows you a list of all of your employees and allows you to search by name and sort by name, location, or country.
 
-[![Image of the starting page](https://chad-employee-directory.herokuapp.com/)](https://drive.google.com/file/d/1T6ws-jvBViBGDxGL5JmjV46ObWKNvK2k/view)
+[![Image of the starting page](https://github.com/Chad1281/employee-directory/blob/main/Homepage.gif)](https://github.com/Chad1281/employee-directory/blob/main/Homepage.gif)
 
 ## Deployment
 
