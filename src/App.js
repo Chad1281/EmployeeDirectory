@@ -1,23 +1,23 @@
 import React, { Component } from "react";
 import "bootstrap/dist/css/bootstrap.css";
 import 'react-bootstrap-table-next/dist/react-bootstrap-table2.min.css';
+import Image from 'react-bootstrap/Image';
 import Wrapper from "./components/Wrapper";
 import Container from "./components/Container";
 import Title from "./components/Title";
 import Table from "./components/Table";
 import Search from "./components/Search";
-import employees from "./employees.json";
+import API from "./utils/API";
 
 class App extends Component {
-  // Setting this.state.employees to the employees json array
   state = {
-    employees,
+    employees: [{}],
     name: "",
   };
 
   handleInputChange = event => {
+    event.preventDefault();
     const { name, value } = event.target;
-
     this.setState({
       [name]: value
     })
@@ -31,14 +31,27 @@ class App extends Component {
     })
   }
 
-  filterEmployees = name => {
+  filterEmployees = e => {
     const employees = this.state.employees.filter(employee => employee.name.includes(this.state.name));
     console.log(employees)
     this.setState({ employees });
   }
 
-  sortTable = event => {
-
+  componentDidMount() {
+    API.getRandomEmployee().then(results => {
+      const employees = results.data.results.map((e) => ({
+        image: <Image src={e.picture.medium} />,
+        name: `${e.name.first} ${e.name.last}`,
+        phone: e.phone,
+        email: e.email,
+        location: `${e.location.city}, ${e.location.state}`,
+        country: e.location.country
+      }))
+      console.log(employees);
+      this.setState({        
+        employees: employees,
+      });
+    });
   }
 
   render() {
@@ -47,8 +60,7 @@ class App extends Component {
         <Title>Employee Directory</Title>
         <Container>
           <Search handleChange = {this.handleInputChange} handleSubmit = {this.handleFormSubmit} />
-          <Table employees= {this.state.employees}>
-            
+          <Table employees= {this.state.employees}>            
           </Table>            
         </Container>        
       </Wrapper>      
