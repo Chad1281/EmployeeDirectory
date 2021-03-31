@@ -26,7 +26,7 @@ function Table(props) {
         headerStyle: (colum, colIndex) => {
             return { width: "10vw", textAlign: "center" };
           },
-        style: { paddingTop: "40px", fontSize: "1.2rem"  }
+        style: { paddingTop: "40px", fontSize: "1.2rem" }
     }, {
         dataField: "email",
         text: "Email",
@@ -34,7 +34,7 @@ function Table(props) {
         headerStyle: (colum, colIndex) => {
             return { width: "20vw", textAlign: "center" };
           },
-        style: { paddingTop: "40px", fontSize: "1.2rem"  }
+        style: { paddingTop: "40px", fontSize: "1.2rem" }
     }, {
         dataField: "location",
         text: "Location",
@@ -42,7 +42,7 @@ function Table(props) {
         headerStyle: (colum, colIndex) => {
             return { width: "15vw", textAlign: "center" };
           },
-        style: { paddingTop: "40px", fontSize: "1.2rem"  }
+        style: { paddingTop: "40px", fontSize: "1.2rem" }
     }, {
         dataField: "country",
         text: "Country",
@@ -50,7 +50,7 @@ function Table(props) {
         headerStyle: (colum, colIndex) => {
             return { width: "10vw", textAlign: "center" };
           },
-        style: { paddingTop: "40px", fontSize: "1.2rem"  }
+        style: { paddingTop: "40px", fontSize: "1.2rem" }
     }];
 
     return <BootstrapTable 
