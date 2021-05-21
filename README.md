@@ -13,4 +13,4 @@ Access the page at [https://chad-employee-directory.herokuapp.com/](https://chad
 ## Utilization
 
 1. Click the Name table cell to sort by name, location to sort by location, or country to sort by country.
-2. Start typing a name to search by name.
+2. To search by name type the name into the Search input.
